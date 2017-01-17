@@ -1,0 +1,34 @@
+@import 'constants';
+@import 'navbar';
+@import 'login';
+
+body,html {
+  width : 100%;
+  height: 100%;
+  margin: 0 auto;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  color: $text-dark;
+}
+
+#app, #content-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+#content {
+  width: 100%;
+  height: 100%;
+  margin-top: $navbar-lg;
+  box-sizing: border-box;
+  @media screen and (max-width: $screen-sm) {
+    margin-top: $navbar-sm;
+  }
+}
+
+.error-text {
+  color: $error-text;
+}
+
+a {
+  text-decoration: none;
+}
