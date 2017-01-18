@@ -13,6 +13,7 @@ router.use((req, res, next) => {
     });
 });
 router.use('/user', require('./user'));
+router.use('/search/repos', require('./search'));
 
 // No API routes matched --> 404
 router.use((req, res) => res.status(404).end());

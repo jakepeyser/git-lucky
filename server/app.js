@@ -9,7 +9,7 @@ const PATHS = {
   build: path.join(__dirname, '../browser/build')
 }
 const PORT = process.env.PORT || 8080;
-if (process.env.NODE_ENV !== 'production' && process.env.NODE_ENV !== 'staging')
+if (!process.env.NODE_ENV || !process.env.NODE_ENV.match(/production|staging|testing/))
   require('dotenv').config();
 
 // Logging, static, cookie-parser, and auth checking middleware
@@ -33,3 +33,5 @@ app.use((err, req, res, next) => {
 app.listen(PORT, () =>
   console.log(chalk.blue(`Server started on port ${chalk.magenta(PORT)}`))
 );
+
+module.exports = app;
