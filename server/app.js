@@ -33,3 +33,5 @@ app.use((err, req, res, next) => {
 app.listen(PORT, () =>
   console.log(chalk.blue(`Server started on port ${chalk.magenta(PORT)}`))
 );
+
+module.exports = app;

@@ -20,7 +20,7 @@ router.get('/date', (req, res, next) => {
   const { after, before } = req.query;
   let dateQueryBuilder = [];
   if (after || before) {
-    dateQueryBuilder.push('created:"');
+    dateQueryBuilder.push('q=created:"');
     if (after && !before)
       dateQueryBuilder.push(`>=${after}`);
     else if (before && !after)
@@ -33,7 +33,7 @@ router.get('/date', (req, res, next) => {
   
   githubRequest(
     req, res, next,
-    `https://api.github.com/search/repositories?q=${dateRangeQuery}sort=stars`,
+    `https://api.github.com/search/repositories?${dateRangeQuery}sort=stars`,
     processSearchResult
   );
 });
