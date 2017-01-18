@@ -1,0 +1,47 @@
+#search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: $screen-md;
+  padding: 15px;
+  > form {
+    width: 100%;
+  }
+}
+
+.search-filters {
+  display: flex;
+  flex-direction: row;
+  > .filter-selector {
+    min-width: 150px;
+    width: 20%;
+    > h3 {
+      margin: 0 0 5px;
+      font-size: 16px;
+      font-weight: 500;
+    }
+  }
+  > .filter {
+    width: 80%;
+    padding: 0 5px;
+    box-sizing: border-box;
+    > .date-range {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      > * { // date range pickers
+        width: 100%;
+        box-sizing: border-box;
+      }
+      @media screen and (min-width: $screen-sm) {
+        flex-direction: row;
+        > * {
+          width: 50%;
+          padding: 0 5px;
+        }
+      }
+    }
+  }
+}
+

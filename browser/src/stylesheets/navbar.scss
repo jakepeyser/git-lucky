@@ -29,12 +29,8 @@
   left: 0;
   padding: 0 10px;
   box-sizing: border-box;
-  @media screen and (max-width: $screen-sm) {
-    justify-content: center;
-    padding: 0;
-    > .user-info {
-      display: none;
-    }
+  > a {
+    height: 100%;
   }
   .nav-title {
     display: flex;
@@ -83,6 +79,13 @@
     display: flex;
     > a {
       padding: 5px 0;
+    }
+  }
+  @media screen and (max-width: $screen-sm) {
+    justify-content: center;
+    padding: 0;
+    > .user-info {
+      display: none;
     }
   }
 }

@@ -1,6 +1,7 @@
 @import 'constants';
 @import 'navbar';
 @import 'login';
+@import 'search';
 
 body,html {
   width : 100%;
@@ -16,12 +17,13 @@ body,html {
 }
 
 #content {
+  display: flex;
+  justify-content: center;
   width: 100%;
   height: 100%;
-  margin-top: $navbar-lg;
-  box-sizing: border-box;
+  padding-top: $navbar-lg;
   @media screen and (max-width: $screen-sm) {
-    margin-top: $navbar-sm;
+    padding-top: $navbar-sm;
   }
 }
 

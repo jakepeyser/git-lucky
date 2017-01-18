@@ -28,6 +28,6 @@ const Navbar =  ({ home, user }) => (
   </div>
 )
 
-const mapStateToProps = state => ({ user: state.user });
+const mapStateToProps = ({ user }) => ({ user });
 
 export default connect(mapStateToProps)(Navbar);

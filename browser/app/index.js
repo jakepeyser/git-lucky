@@ -14,7 +14,7 @@ import { fetchFollowing } from './redux/following';
 // React containers and components
 import App from './components/App';
 import Login from './components/Login';
-import Search from './components/search/Search';
+import Search from './components/search/SearchContainer';
 
 // Reroute user based on current auth status
 const checkAuth = (nextState, replace, cb) => {
