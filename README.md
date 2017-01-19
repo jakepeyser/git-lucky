@@ -2,6 +2,45 @@
 
 _Feeling lucky? This app allows you to perform advanced searches for GitHub repositories_
 
+## API Details
+
+There are three main API routes: `/auth`, `/user`, and `/search`. They are all prefixed with the `/api` sub-path.
+
+### Auth - `/auth`
+
+These routes are used for authentication purposes  
+**GET /api/auth/clientid** - Retrieve the GitHub Client ID (public key) from the server  
+**GET /api/auth/callback** - Called by the GitHyb OAuth2 service upon successful user web flow authorization
+
+### User - `/user`
+
+These routes are used to retrieve information about the logged-in user  
+**GET /api/user** - Retrieve the user details for the logged-in user  
+**GET /api/user/following** - Retrieve the users that the logged-in user is following
+
+### Search - `/search`
+
+These routes are used to search for repositories based on various criteria. Each API takes a query paramater `q` that searches for that term somewhere within the repo.  
+**GET /api/search/repos** - Search for repos containing the requested query  
+**GET /api/search/repos/user/:username** - Search for repos created by the specified user  
+**GET /api/search/repos/date** - Search for repos created before, after, or between the specified date range  
+- `after=YYYY-MM-DD`  
+- `before=YYYY-MM-DD`  
+**GET /api/search/repos/lanuage/:language** - Search for repos comprised of the specified language  
+
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/83fe207d840dca02822a)
+
+## Considerations, Assumptions, and Deviations
+
+- I used GitHub as the "social network" of this exercise. I consider GitHub as the social network for programmers!
+- The app lets users search for repositories and filter by keyword, repo owner, creation date, and language
+- To make the app as streamlined as possible, I kept it to only two screens: login and search
+- For auth, I used the OAuth2 web flow
+- To maintain user login, I store user access tokens in a cookie. This provides additional protection against XSS attacks
+- I made the assumption that repos should be queryable using a keyword search, as well
+- Based on the spec, I made the assumption that only a single filter could be applied at one time
+- If I were to implement this API from a blank slate, I would have an API endpoint that allows for the input of multiple filters via query parameters. Splitting them up into separate routes creates more calls to a 3rd party service, increases bandwidth, computaiton, and frequency of hitting the rate limit.
+
 ## Running Locally
 
 ### Prerequisites
