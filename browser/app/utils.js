@@ -32,3 +32,8 @@ export const parseDate = (dateString) => {
   const date = new Date(dateString);
   return `${date.getFullYear()}-${zeroPad(date.getMonth() + 1)}-${zeroPad(date.getDate())}`;
 };
+
+// Add thousands separators to input number
+export const placeCommas = (num) => {
+  return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+};

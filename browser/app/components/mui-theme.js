@@ -17,6 +17,24 @@ export const palette = {
 
 export const muiTheme = getMuiTheme({}, {
   palette,
+  datePicker: {
+    color: palette.primary1Color,
+    textColor: palette.alternateTextColor,
+    calendarTextColor: palette.textColor,
+    selectColor: palette.primary2Color,
+    selectTextColor: palette.alternateTextColor,
+    calendarYearBackgroundColor: palette.canvasColor
+  },
+  radioButton: {
+    borderColor: palette.textColor,
+    backgroundColor: palette.alternateTextColor,
+    checkedColor: palette.primary1Color,
+    requiredColor: palette.primary1Color,
+    disabledColor: palette.disabledColor,
+    size: 24,
+    labelColor: palette.textColor,
+    labelDisabledColor: palette.disabledColor
+  },
   raisedButton: {
     color: palette.primary1Color,
     textColor: palette.alternateTextColor,

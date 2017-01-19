@@ -10,7 +10,7 @@
   }
 }
 
-.search-filters {
+.filters {
   display: flex;
   flex-direction: row;
   > .filter-selector {
@@ -43,5 +43,9 @@
       }
     }
   }
+}
+
+.search-results {
+  width: 100%;
 }
 

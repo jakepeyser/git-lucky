@@ -9,6 +9,7 @@ class SearchContainer extends React.Component {
     super(props);
     this.state = {
       search: '',
+      error: '',
       filter: 'username',
       username: '',
       language: '',
@@ -64,14 +65,16 @@ class SearchContainer extends React.Component {
 
     // Check for invalid search
     if (queryBuilder.length === 2) {
-      return;
+      return this.setState({ 
+        error: 'You must specify a query or filter to search'
+      })
     }
 
     // Make call to search API
     const url = queryBuilder.join('');
     axios.get(url)
-      .then(repos => {
-        console.log(repos)
+      .then(res => {
+        this.setState({ repos: res.data, error: '' });
       })
       .catch(err => {
         console.error(err)
@@ -79,7 +82,6 @@ class SearchContainer extends React.Component {
   }
 
   render() {
-    console.log(this.state.repos);
     return (
       <Search
         updateState={ this.updateState }
@@ -87,6 +89,8 @@ class SearchContainer extends React.Component {
         curFilter={ this.state.filter }
         following={ this.props.following }
         curLang={ this.state.language }
+        repos={ this.state.repos }
+        error={ this.state.error }
       />
     )
   }
