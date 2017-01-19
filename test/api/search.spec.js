@@ -27,6 +27,27 @@ describe('test /user routes', function() {
       });
   });
 
+  describe('General search', function() {
+
+    it('gets 401 when not authed', function() {
+      return agent
+        .get('/api/search/repos/')
+        .expect(401);
+    });
+
+    it('retrieves ands parses a list of repositories', function() {
+      return agent
+        .get('/api/search/repos/')
+        .set('Cookie', ['github_access_token=123ABC'])
+        .then(res => {
+          expect(res.body[0]).to.have.all.keys(
+            'id', 'name', 'description', 'language', 'private',
+            'createdAt', 'updatedAt', 'links', 'stats'
+          );
+        })
+    });
+  });
+
   describe('Search by username', function() {
 
     it('gets 401 when not authed', function() {

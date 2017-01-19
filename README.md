@@ -50,3 +50,7 @@ npm start
 ```
 
 Also, make sure to add the `GITHUB_CLIENT_ID` and `GITHUB_CLIENT_SECRET` environment variables with their respective values to your production environment.
+
+## Testing
+
+To run the unit test suite, execute the command `npm test`. To continuously run the tests while actively developing, run `npm run test-watch`.
