@@ -28,7 +28,7 @@ const githubRequest = (req, res, next, url, success) => {
   });
 }
 
-// Extract core repo details from the verpose GitHub API response
+// Extract core repo details from the verbose GitHub API response
 const getRepoDetails = (repo) => ({
   id: repo.id,
   name: repo.name,
@@ -52,4 +52,22 @@ const processSearchResult = (result) => {
   return JSON.parse(result).items.map(getRepoDetails);
 }
 
-module.exports = { githubRequest, processSearchResult };
+// Extract core user info
+const getUserDetails = (user) => ({
+  id: user.id,
+  username: user.login,
+  name: user.name,
+  avatarUrl: user.avatar_url,
+  githubUrl: user.html_url
+});
+
+const processUserResult = (result) => {
+  return JSON.parse(result).map(getUserDetails);
+}
+
+module.exports = { 
+  githubRequest,
+  processSearchResult,
+  processUserResult,
+  getUserDetails
+};

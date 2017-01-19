@@ -16,5 +16,43 @@ export const palette = {
 };
 
 export const muiTheme = getMuiTheme({}, {
-  palette
+  palette,
+  datePicker: {
+    color: palette.primary1Color,
+    textColor: palette.alternateTextColor,
+    calendarTextColor: palette.textColor,
+    selectColor: palette.primary2Color,
+    selectTextColor: palette.alternateTextColor,
+    calendarYearBackgroundColor: palette.canvasColor
+  },
+  radioButton: {
+    borderColor: palette.textColor,
+    backgroundColor: palette.alternateTextColor,
+    checkedColor: palette.primary1Color,
+    requiredColor: palette.primary1Color,
+    disabledColor: palette.disabledColor,
+    size: 24,
+    labelColor: palette.textColor,
+    labelDisabledColor: palette.disabledColor
+  },
+  raisedButton: {
+    color: palette.primary1Color,
+    textColor: palette.alternateTextColor,
+    primaryColor: palette.primary1Color,
+    primaryTextColor: palette.alternateTextColor,
+    secondaryColor: palette.accent1Color,
+    secondaryTextColor: palette.alternateTextColor,
+    disabledColor: palette.disabledColor,
+    disabledTextColor: palette.canvasColor
+  },
+  textField: {
+    textColor: palette.textColor,
+    hintColor: palette.disabledColor,
+    floatingLabelColor: palette.accent1Color,
+    disabledTextColor: palette.accent1Color,
+    errorColor: palette.errorColor,
+    focusColor: palette.focusColor,
+    backgroundColor: 'transparent',
+    borderColor: palette.borderColor
+  }
 });

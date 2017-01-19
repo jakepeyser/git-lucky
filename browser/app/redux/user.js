@@ -12,7 +12,6 @@ const receiveUser = user => ({
 // --------------------> THUNKS <--------------------
 
 export const fetchUser = (done) => dispatch => {
-  console.log('sdfs')
   axios.get('/api/user')
     .then(res => {
       dispatch(receiveUser(res.data))

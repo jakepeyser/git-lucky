@@ -1,0 +1,2 @@
+test/browser.js
+--require test/utils

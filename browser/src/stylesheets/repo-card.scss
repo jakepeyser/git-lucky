@@ -1,0 +1,100 @@
+.repo-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 10px 0;
+  + .repo-card { // adjacent repo cards
+    margin-top: 0;
+    border-top: 1px solid $toolbar;
+    padding-top: 5px;
+  }
+  > .repo-details {
+    display: inherit;
+    flex-direction: column;
+    margin: 5px;
+    a, p {
+      margin: 5px 0 0;
+    }
+    > .repo-name { // repo title and link
+      color: $primary;
+      > h4 {
+        margin: 0;
+        font-size: 20px;
+      }
+      &:hover {
+        color: $hover;
+      }
+    }
+    > .repo-metadata {
+      display: inherit;
+      flex-direction: row;
+      align-items: flex-end;
+      > .repo-lang {
+        font-size: 14px;
+        font-weight: bold;
+      }
+      > .repo-date {
+        margin-left: 10px;
+        font-size: 12px;
+        font-style: italic;
+      }
+    }
+    .repo-home {
+      font-size: 12px;
+      color: $hover;
+      text-decoration: underline;
+    }
+    .repo-desc {
+      font-size: 14px;
+      font-style: italic;
+    }
+    @media screen and (max-width: $screen-md) {
+      > .repo-name > h4 {
+        font-size: 18px;
+      }
+      > .repo-metadata {
+        align-items: flex-start;
+        flex-direction: column;
+        > .repo-date {
+          margin-left: 0;
+        }
+      }
+    }
+    @media screen and (max-width: $screen-sm) {
+      > .repo-name > h4 {
+        font-size: 16px;
+      }
+      > .repo-metadata {
+        > .repo-lang {
+          font-size: 12px;
+        }
+        > .repo-date {
+          font-size: 10px;
+        }
+      }
+      .repo-home {
+        font-size: 12px;
+        color: $hover;
+      }
+      .repo-desc {
+        font-size: 13px;
+      }
+    }
+  }
+  > .repo-stats {
+    display: inherit;
+    flex-direction: column;
+    width: 70px;
+    > .repo-stat-wrapper {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      height: 50px;
+      > p { // stat count
+        font-size: 12px;
+        margin: 0 0 0 5px;
+      }
+    }
+  }
+}
