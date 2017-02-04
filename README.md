@@ -30,21 +30,11 @@ These routes are used to search for repositories based on various criteria. Each
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/83fe207d840dca02822a)
 
-## Considerations, Assumptions, and Deviations
-
-- I used GitHub as the "social network" of this exercise. I consider GitHub as the social network for programmers!
-- The app lets users search for repositories and filter by keyword, repo owner, creation date, and language
-- To make the app as streamlined as possible, I kept it to only two screens: login and search
-- For auth, I used the OAuth2 web flow
-- To maintain user login, I store user access tokens in a cookie. This provides additional protection against XSS attacks
-- I made the assumption that repos should be queryable using a keyword search, as well
-- Based on the spec, I made the assumption that only a single filter could be applied at one time
-- If I were to implement this API from a blank slate, I would have an API endpoint that allows for the input of multiple filters via query parameters. Splitting them up into separate routes creates more calls to a 3rd party service, increases bandwidth, computaiton, and frequency of hitting the rate limit.
-
 ## Running Locally
 
 ### Prerequisites
 - [Node.js and npm](https://nodejs.org/en/)
+- [GitHub application](https://github.com/settings/developers)
 
 ### Installing
 
