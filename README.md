@@ -1,5 +1,7 @@
 # git lucky
 
+![Build Status](https://travis-ci.org/jakepeyser/git-lucky.png)
+
 _Feeling lucky? This app allows you to perform advanced searches for GitHub repositories_
 
 ## API Details
